@@ -1,0 +1,1467 @@
+/* CSS RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+/* Clearfix */
+.cf:before,
+.cf:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    zoom: 1;
+}
+
+
+
+/* Memasukkan font */
+@font-face {
+    font-family: 'lato';
+    src: url('Font/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'quicksand';
+    src: url('Font/Quicksand-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('Font/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+
+/* Keyframes untuk animasi pergerakan gelembung */
+@keyframes randomMovement {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    20% {
+        transform: translate(17px, -10px);
+    }
+
+    40% {
+        transform: translate(-10px, 8px);
+    }
+
+    60% {
+        transform: translate(9px, 6px);
+    }
+
+    80% {
+        transform: translate(-5px, -5px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes randomColor {
+    0% {
+        background-color: #f7c267;
+    }
+
+    50% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: #FFA500;
+    }
+}
+
+
+
+
+/* CSS for landing page */
+::selection {
+    background-color: #5e17eb;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #eaeaea;
+}
+
+/* --------------------------------------------------------CSS BAGIAN HERO------------------------------------------------------------------------- */
+.hero {
+    height: 100vh;
+    background-color: #6160dd;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    width: 4385px;
+    background-color: rgb(97, 96, 221, 0.8);
+    z-index: 99;
+    position: fixed;
+}
+
+.na {
+    height: 12.5vh;
+}
+
+/* Logo */
+nav img {
+    width: 700px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 100px;
+}
+
+/* Daftar item pada navbar */
+nav ul {
+    display: flex;
+    gap: 110px;
+    padding-right: 300px;
+    padding-top: 20px;
+    margin-top: 35px;
+}
+
+/* Styling untuk link */
+nav ul li a {
+    font-family: lato, 'serif';
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 45px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+/* Efek hover memperbesar teks tanpa mengubah jarak antar item */
+nav ul li:not(:last-child) a:hover {
+    color: #fdb131;
+    transform: scale(1.2);
+}
+
+/* button untuk contact */
+nav ul li:nth-child(6) a {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: inline-block;
+    width: 350px;
+    height: 115px;
+    line-height: 115px;
+    background-color: #5e17eb;
+    border-radius: 30px;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 30px;
+    left: 150px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav ul li:nth-child(6) a:hover {
+    background-color: #fdb131;
+    color: white;
+    transform: scale(1.05);
+    animation: randomColor 1s infinite;
+}
+
+nav ul li:nth-child(6) a:active {
+    background-color: #f39a00ce;
+    color: white;
+}
+
+
+/* Untuk bagian kanan hero */
+
+.container-hero {
+    display: flex;
+}
+
+.img-hero {
+    width: 49%;
+}
+
+/* Untuk mengatur posisi info */
+.info-hero {
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    justify-content: center;
+    padding-top: 12vh;
+}
+
+/* untuk title dan subtitlya */
+.subtitle {
+    color: #d9d9d9;
+    font-weight: bold;
+    font-size: 100px;
+    margin-bottom: 80px;
+    display: inline-block;
+    font-family: quicksand, 'serif';
+}
+
+.info-hero p {
+    font-family: lato, 'sans-serif';
+    color: white;
+}
+
+.job {
+    height: 210px;
+}
+
+.job p {
+    font-size: 150px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    font-weight: 900;
+}
+
+.info-hero p:nth-child(2) {
+    font-size: 200px;
+    font-weight: bold;
+}
+
+/* button Get Started */
+.button-get {
+    font-size: 48px;
+    font-weight: 600;
+    font-family: lato, 'sans-serif';
+    display: inline-block;
+    width: 450px;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #5e17eb;
+    color: white;
+    margin-top: 90px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.button-get:hover {
+    background-color: #fdb131;
+    color: white;
+    transform: scale(1.05);
+    animation: randomColor 1s infinite;
+}
+
+.button-get:active {
+    background-color: #f39a00ce;
+    color: white;
+}
+
+/* untuk bagian see portfolio */
+.button-home span a {
+    color: #fdb131;
+    font-family: lato, 'sans-serif';
+    font-size: 60px;
+    padding-left: 100px;
+    font-weight: 600;
+}
+
+.button-home span a:hover {
+    text-decoration: none;
+    color: #f7c267;
+}
+
+.button-home span a:active {
+    text-decoration: none;
+    color: #fba003;
+}
+
+.award-hero {
+    color: white;
+    font-size: 45px;
+    font-family: quicksand, 'sans-serif';
+    width: 8000px;
+    display: flex;
+    margin-left: 90px;
+    margin-top: 100px;
+}
+
+.award-hero .award1 span:nth-child(1),
+.award-hero .award2 span:nth-child(1),
+.award-hero .award3 span:nth-child(1) {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25px;
+    font-size: 70px;
+}
+
+.award1,
+.award2,
+.award3 {
+    padding-top: 350px;
+    padding-right: 200px;
+    margin-left: 100px;
+}
+
+
+/* Untuk bagian hero yang ada disebelah kiri */
+.kotak-orange {
+    margin-top: 20px;
+}
+
+.kotak-hero {
+    width: 1100px;
+    height: 612px;
+    background-color: #fdb131;
+    border-radius: 0 180px 180px 0;
+}
+
+.kotak-orange .kotak-hero:nth-child(2) {
+    border-radius: 180px;
+    position: relative;
+    left: 1000px;
+    width: 900px;
+}
+
+.gelembung-biru {
+    position: absolute;
+    top: 0;
+}
+
+.gelembung-biru .gelembung-hero:nth-child(1) {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 1550px;
+    top: 23vh;
+    animation: randomMovement 5s infinite ease-in;
+}
+
+.gelembung-biru .gelembung-hero:nth-child(2) {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+    position: relative;
+    left: 1800px;
+    top: 80vh;
+    animation: randomMovement 5s infinite ease-out;
+}
+
+.gelembung-biru .gelembung-hero:nth-child(3) {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    position: relative;
+    left: 400px;
+    top: 31vh;
+    animation: randomMovement 5s infinite ease-in-out;
+}
+
+/* untuk mengatur foto pada hero */
+.picture-hero {
+    position: absolute;
+    top: 14.15vh;
+    left: 250px;
+}
+
+.picture-hero img {
+    width: 1580px;
+}
+
+/* Untuk mengatur logo sosmed */
+.sosmed {
+    position: absolute;
+    top: 0;
+    left: 100px;
+}
+
+/* facebook */
+.facebook a img {
+    width: 50px;
+    padding: 10px 10px 10px 19px;
+}
+
+.facebook {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 889px;
+}
+
+.facebook:hover a img {
+    filter: brightness(1000%);
+}
+
+.facebook:hover {
+    background-color: #5e17eb;
+}
+
+/* whats App */
+.whatsapp a img {
+    width: 40px;
+    padding: 14px 10px 10px 14.5px;
+}
+
+.whatsapp {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 30px;
+}
+
+.whatsapp:hover a img {
+    filter: brightness(1000%);
+}
+
+.whatsapp:hover {
+    background-color: #5e17eb;
+}
+
+
+.instagram a img {
+    width: 43px;
+    padding: 14px 10px 10px 13px;
+}
+
+/* Instagram */
+.instagram {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 30px;
+}
+
+.instagram:hover a img {
+    filter: brightness(1000%);
+}
+
+.instagram:hover {
+    background-color: #5e17eb;
+}
+
+/* Twitter */
+.twitter a img {
+    width: 40px;
+    padding: 15px 10px 10px 15px;
+}
+
+.twitter {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 30px;
+}
+
+.twitter:hover a img {
+    filter: brightness(1000%);
+}
+
+.twitter:hover {
+    background-color: #5e17eb;
+}
+
+
+/* --------------------------------------------------------CSS BAGIAN ABOUT------------------------------------------------------------------------- */
+.about {
+    height: 97vh;
+    background-color: white;
+}
+
+.container-about {
+    padding: 300px;
+    display: flex;
+}
+
+.biodata {
+    width: 50%;
+    padding-left: 200px;
+}
+
+.biodata-date {
+    position: relative;
+    right: 60px;
+}
+
+.biodata-title {
+    padding-left: 100px;
+}
+
+.biodata-title h1 {
+    font-size: 200px;
+    font-family: roboto, 'sans-serif';
+}
+
+.biodata-title .subtitle {
+    width: 400px;
+}
+
+.biodata-title .subtitle span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    color: #FFA500;
+}
+
+.biodata-title .subtitle span::before,
+.biodata-title .subtitle span::after {
+    content: "";
+    flex: 1;
+    height: 5px;
+    background-color: #FFA500;
+    margin: 60px 20px;
+}
+
+.profil-bio {
+    font-size: 50px;
+    font-family: lato, 'sans-serif';
+    color: #737373;
+    line-height: 1.5;
+}
+
+.name {
+    padding-top: 70px;
+
+}
+
+.name,
+.birth,
+.email {
+    width: 2000px;
+    padding-left: 70px;
+}
+
+
+.name img,
+.birth img,
+.email img {
+    width: 80px;
+}
+
+.name p,
+.birth p,
+.email p {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 70px;
+    margin-right: 400px;
+}
+
+.name p span:nth-child(1),
+.birth p span:nth-child(1),
+.email p span:nth-child(1) {
+    font-weight: bold;
+    font-family: quicksand;
+    font-size: 60px;
+}
+
+.name p span:nth-child(2),
+.birth p span:nth-child(2),
+.email p span:nth-child(2) {
+    font-family: quicksand;
+    font-weight: bold;
+    color: #a6a6a6;
+    font-size: 90px;
+    display: inline-block;
+    padding-right: 300px;
+    padding-left: 300px;
+    position: relative;
+    bottom: 20px;
+}
+
+.birth p span:nth-child(2) {
+    position: relative;
+    right: 40px;
+}
+
+.name p span:nth-child(3),
+.birth p span:nth-child(3),
+.email p span:nth-child(3) {
+    font-family: lato;
+    font-size: 50px;
+    position: relative;
+    top: 15px;
+}
+
+.birth p span:nth-child(1) {
+    margin-right: 70px;
+}
+
+/* Interest */
+.title-interest h1 {
+    font-family: quicksand;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.container-interes {
+    display: flex;
+}
+
+.interest-game img {
+    width: 90px;
+    height: 90px;
+    padding-top: 5px;
+}
+
+.interest-design img,
+.interest-music img,
+.interest-photo img {
+    width: 65px;
+    height: 65px;
+    padding-top: 15px;
+}
+
+.interest-design span,
+.interest-music span,
+.interest-game span,
+.interest-photo span {
+    font-size: 45px;
+    font-family: lato;
+    padding-top: 30px;
+}
+
+.interest-design,
+.interest-game,
+.interest-music,
+.interest-photo {
+    width: 300px;
+    height: 110px;
+    background-color: white;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-right: 100px;
+    margin-top: 70px;
+    box-shadow: 30px 30px 40px 10px rgb(0, 0, 0, .08);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.interest-design:hover,
+.interest-game:hover,
+.interest-music:hover,
+.interest-photo:hover {
+    background-color: #00b8ff;
+    color: white;
+    filter: brightness(10);
+    transform: scale(1.09);
+}
+
+.interest-design {
+    margin-left: 50px;
+}
+
+/* FOTO ABOUT */
+.container-picture {
+    width: 1150px;
+    height: 1650px;
+    background-color: #dad1c8;
+    display: flex;
+    justify-content: center;
+    border-radius: 200px;
+    margin-left: 480px;
+}
+
+.container-picture img {
+    margin-top: 150px;
+    width: 1300px;
+}
+
+/* GELEMBUNG ABOUT */
+
+.gelembung1 {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: 500px;
+    top: 2380px;
+    animation: randomMovement 5s infinite ease-out;
+}
+
+.gelembung2 {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    right: 350px;
+    top: 3890px;
+    animation: randomMovement 5s infinite ease-in;
+}
+
+.gelembung3 {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    right: 1400px;
+    top: 2700px;
+    animation: randomMovement 5s infinite ease-in-out;
+}
+
+/* --------------------------------------------------------CSS BAGIAN SERVICE------------------------------------------------------------------------- */
+
+.service {
+    /* height: 118vh; */
+    background-color: #eaeaea;
+}
+
+.service-title h1 {
+    font-size: 200px;
+    font-family: roboto, 'sans-serif';
+    text-align: center;
+    padding-top: 200px;
+}
+
+.service-title .subtitle2 {
+    width: 600px;
+    position: relative;
+    left: 1890px;
+}
+
+.service-title .subtitle2 span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    font-family: quicksand;
+    color: #FFA500;
+}
+
+.service-title .subtitle2 span::before,
+.service-title .subtitle2 span::after {
+    content: "";
+    flex: 1;
+    height: 5px;
+    background-color: #FFA500;
+    margin: 60px 20px;
+}
+
+.description {
+    width: 2500px;
+    margin: auto;
+}
+
+.description p {
+    font-size: 60px;
+    font-family: lato;
+    text-align: center;
+    color: #737373;
+    line-height: 1.5;
+}
+
+.paralax {
+    position: relative;
+    background-image: url("Image/Service.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-inline: 300px;
+    padding-block: 200px;
+    margin-top: 200px;
+    z-index: 5;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+/* Pseudo-element untuk efek brightness pada background */
+.paralax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-attachment: inherit;
+    background-position: inherit;
+    background-size: inherit;
+    filter: brightness(0.7);
+    z-index: -1;
+}
+
+
+/* Mengatur isi Service */
+
+.presentation-design {
+    width: 900px;
+    height: 1000px;
+    border: 10px solid #5e17eb;
+    border-radius: 50px;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    font-family: lato;
+    line-height: 140px;
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.presentation-design:hover {
+    background-color: #5e17eb;
+    cursor: pointer;
+}
+
+.presentation-design:hover img {
+    transform: scale(1.1);
+}
+
+.presentation-design img {
+    width: 340px;
+    padding-top: 100px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.description-service {
+    width: 700px;
+    display: flex;
+    margin: auto;
+    line-height: 1.3;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+/* --------------------------------------------------------CSS BAGIAN PORTFOLIO------------------------------------------------------------------------- */
+.portfolio {
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.portfolio-title h1 {
+    font-size: 200px;
+    font-family: roboto, 'sans-serif';
+    text-align: center;
+    padding-top: 200px;
+}
+
+.portfolio-title .subtitle3 {
+    width: 600px;
+    position: relative;
+    left: 1890px;
+}
+
+.portfolio-title .subtitle3 span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    font-family: quicksand;
+    color: #FFA500;
+}
+
+.portfolio-title .subtitle3 span::before,
+.portfolio-title .subtitle3 span::after {
+    content: "";
+    flex: 1;
+    height: 5px;
+    background-color: #FFA500;
+    margin: 60px 20px;
+}
+
+.all-portfolio {
+    gap: 140px;
+    padding-top: 200px;
+    padding-inline: 700px;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+}
+
+.port {
+    color: #a6a6a6;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 60px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.port img {
+    border: 15px solid #5e17eb;
+    border-radius: 30px;
+    width: 750px;
+    background-color: #f0f0f0;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.port img:hover {
+    transform: scale(1.1);
+}
+
+.port:hover {
+    color: black;
+}
+
+.port span {
+    margin-top: 60px;
+}
+
+/* GELEMBUNG PORTFOLIO */
+.gelembung-portfolio1 {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    bottom: 1800px;
+    left: 2800px;
+    animation: randomMovement 5s infinite ease-in-out;
+}
+
+.gelembung-portfolio2 {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 110px;
+    height: 110px;
+    position: relative;
+    bottom: 1650px;
+    left: 750px;
+    z-index: 1;
+    animation: randomMovement 5s infinite ease-in;
+}
+
+.gelembung-portfolio3 {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    bottom: 1800px;
+    left: 3350px;
+    z-index: 1;
+    animation: randomMovement 5s infinite ease-in;
+}
+
+.gelembung-portfolio4 {
+    background: linear-gradient(to left, #00b8ff, #5e17eb);
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    position: relative;
+    bottom: 1800px;
+    left: 650px;
+    animation: randomMovement 5s infinite ease-out;
+}
+
+/* --------------------------------------------------------CSS BAGIAN EXPERIENCE------------------------------------------------------------------------- */
+
+.experience {
+    background-color: #eaeaea;
+    overflow: hidden;
+}
+
+.experience h1 {
+    font-size: 200px;
+    font-family: roboto, 'sans-serif';
+    text-align: center;
+    padding-top: 200px;
+}
+
+.experience .subtitle3 {
+    width: 600px;
+    position: relative;
+    left: 1890px;
+}
+
+.experience .subtitle3 span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    font-family: quicksand;
+    color: #FFA500;
+}
+
+.experience .subtitle3 span::before,
+.experience .subtitle3 span::after {
+    content: "";
+    flex: 1;
+    height: 5px;
+    background-color: #FFA500;
+    margin: 60px 20px;
+}
+
+/* Card */
+.card-experience {
+    margin-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: white;
+    width: 2900px;
+    display: flex;
+    margin-top: 70px;
+    border-radius: 60px;
+}
+
+.card-left h2 {
+    font-size: 80px;
+    font-family: quicksand;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.description-card {
+    box-sizing: border-box;
+    width: 2000px;
+    padding: 40px 80px 80px 80px;
+}
+
+.description-card p {
+    font-size: 50px;
+    font-family: lato;
+    color: #737373;
+    line-height: 1.36;
+}
+
+.card-right {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0 60px 60px 0;
+}
+
+.card-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 0 60px 60px 0;
+    filter: brightness(0.7);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.card-right img:hover {
+    filter: brightness(1);
+    transform: scale(1.3);
+}
+
+/* --------------------------------------------------------CSS BAGIAN CONTACT------------------------------------------------------------------------- */
+.contact {
+    background-color: #6160dd;
+    overflow: hidden;
+    border-radius: 200px 200px 0 0;
+
+}
+
+.bio-contact {
+    display: flex;
+    padding-top: 150px;
+    gap: 400px;
+}
+
+.title-contact h1 {
+    color: white;
+    font-family: roboto;
+    font-weight: bold;
+    font-size: 200px;
+    padding: 130px 130px 130px 500px;
+}
+
+hr {
+    width: 4000px;
+}
+
+/* BAGIAN 1 */
+.bagian1 {
+    color: white;
+    font-family: lato;
+    font-size: 50px;
+    padding-left: 500px;
+    width: 800px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.logo-contact {
+    width: 600px;
+    margin-left: -80px;
+}
+
+.bagian1 p {
+    padding-top: 50px;
+}
+
+/* SOSMED CONTACT */
+.sosmed-contact {
+    display: flex;
+    padding-top: 90px;
+    gap: 50px;
+}
+
+/* facebook */
+.facebook2 a img {
+    width: 50px;
+    padding: 10px 10px 10px 19px;
+}
+
+.facebook2 {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.facebook2:hover a img {
+    filter: brightness(1000%);
+}
+
+.facebook2:hover {
+    background-color: #5e17eb;
+}
+
+/* whats App */
+.whatsapp2 a img {
+    width: 40px;
+    padding: 14px 10px 10px 14.5px;
+}
+
+.whatsapp2 {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.whatsapp2:hover a img {
+    filter: brightness(1000%);
+}
+
+.whatsapp2:hover {
+    background-color: #5e17eb;
+}
+
+
+.instagram2 a img {
+    width: 43px;
+    padding: 14px 10px 10px 13px;
+}
+
+/* Instagram */
+.instagram2 {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.instagram2:hover a img {
+    filter: brightness(1000%);
+}
+
+.instagram2:hover {
+    background-color: #5e17eb;
+}
+
+/* Twitter */
+.twitter2 a img {
+    width: 40px;
+    padding: 15px 10px 10px 15px;
+}
+
+.twitter2 {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.twitter2:hover a img {
+    filter: brightness(1000%);
+}
+
+.twitter2:hover {
+    background-color: #5e17eb;
+}
+
+/* BAGIAN 2 */
+.bagian2 ul li h2 {
+    color: white;
+    font-family: lato;
+    font-size: 90px;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+
+.bagian2 ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: lato;
+    font-size: 50px;
+    line-height: 2;
+    width: 70px;
+    transition: transform 0.3s ease;
+}
+
+.bagian2 ul li a:hover {
+    color: #f7c267;
+    transform: translateX(300px);
+}
+
+/* BAGIAN 3 */
+.bagian3 ul li h2 {
+    color: white;
+    font-size: 90px;
+    width: 70px;
+    font-weight: bold;
+    font-family: lato;
+    padding-bottom: 40px;
+}
+
+.bagian3 ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: lato;
+    font-size: 50px;
+    line-height: 2;
+    width: 70px;
+}
+
+.bagian3 ul li a:hover {
+    color: #f7c267;
+}
+
+/* BAGIAN 4 */
+.bagian4 h2 {
+    color: white;
+    font-size: 90px;
+    width: 70px;
+    font-weight: bold;
+    font-family: lato;
+    padding-bottom: 40px;
+}
+
+form {
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+form input:nth-child(1) {
+    height: 80px;
+    width: 500px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 40px;
+    padding-left: 30px;
+}
+
+form input:nth-child(1)::placeholder {
+    padding-left: 30px;
+    opacity: 0.5;
+}
+
+form input:nth-child(2) {
+    height: 300px;
+    width: 530px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 40px;
+    text-align: center;
+}
+
+form input:nth-child(2)::placeholder {
+    opacity: 0.5;
+}
+
+
+.submit-button {
+    height: 100px;
+    width: 250px;
+    border: none;
+    border-radius: 20px;
+    font-size: 40px;
+    text-align: center;
+    background-color: #5e17eb;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    margin-left: 285px;
+}
+
+
+.submit-button:hover {
+    animation: randomColor 1s infinite;
+    transform: scale(1.07);
+}
+
+/* FOOTER */
+footer {
+    color: white;
+    font-size: 50px;
+    padding-block: 80px;
+    font-family: lato;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 300px;
+}
