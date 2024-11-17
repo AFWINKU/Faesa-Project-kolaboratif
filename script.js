@@ -33,15 +33,15 @@ function animateCounter(element, start, end, duration) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const counterElement = document.getElementById('a1');
-    animateCounter(counterElement, 0, 7, 3000); 
+    const element = document.getElementById('a1');
+    animateCounter(element, 0, 7, 3000); 
 });
 document.addEventListener('DOMContentLoaded', () => {
-    const counterElement = document.getElementById('a2');
-    animateCounter(counterElement, 0, 150, 3000);
+    const element = document.getElementById('a2');
+    animateCounter(element, 0, 150, 3000);
 });
 document.addEventListener('DOMContentLoaded', () => {
-    const counterElement = document.getElementById('a3');
-    animateCounter(counterElement, 0, 89, 3000);
+    const element = document.getElementById('a3');
+    animateCounter(element, 0, 89, 3000);
 });
 
